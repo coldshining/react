@@ -18,7 +18,7 @@ import { Input, Button, List, } from 'antd';
 //         style={{marginTop: '10px',marginLeft: '10px',width: '300px'}}
 //         bordered 
 //         dataSource={props.list}
-//         renderItem={(item,index) => <List.Item onClick={(index) => {{props.handleDeleteItem(index)}}}>{item}</List.Item>}
+//         renderItem={(item,index) => <List.Item onClick={() => {{props.handleDeleteItem(index)}}}>{item}</List.Item>}
 //       />
 //   </div>  
 // }

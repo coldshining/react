@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 import axios from 'axios'
 
 import store from './store'
-import { getInputChangeAction, getAddItemAction, getdeleteItemAction, getListDataAction  } from './store/actionCreators.js'
+import { getInitList, getInputChangeAction, getAddItemAction, getdeleteItemAction, getListDataAction } from './store/actionCreators.js'
 
 import AntDesignToDoListUI from './AntDesignToDoListUI'
 
@@ -29,11 +29,13 @@ class AntDesignToDoList extends Component{
     )
   }
 componentDidMount() {
-  axios.get('/list.json').then((res) => {
+  // const action = getInitList();
+  // store.dispatch(action)
+    axios.get('/list.json').then((res) => {
     const data = res.data
     const action = getListDataAction(data)
     store.dispatch(action);
-  })
+  })      
 }
   handleChangeInput(e) {
     const action = getInputChangeAction(e.target.value);
